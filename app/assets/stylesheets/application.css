@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+#grid {
+  margin: 0 auto;
+  width: 589px;
+  height: 589px;
+  border: 2px solid black;
+  background-image: url('../images/retina_wood.png');
+}
+
+.node {
+  width: 31px;
+  height: 31px;
+  float: left;
+  margin-left: -1px;
+  margin-top: -1px;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.circle {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+
+  padding:7px;
+  text-align:center;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+
+.black {
+  background-image: url('../images/low_contrast_linen.png');
+}
+
+.white {
+  background-image: url('../images/psychedelic_pattern.png');
+}
+
+#drag_box {
+  float: left;
+  height: 150px;
+  width: 50px;
+  background: black;
+}
