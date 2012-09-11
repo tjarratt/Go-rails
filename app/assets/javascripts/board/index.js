@@ -2,6 +2,7 @@ $(document).ready(function() {
   var Grid = Backbone.View.extend({
     id: "grid",
     tagName: "div",
+    className: "no_select",
     initialize: function() {
       // standard size is 19x19
       for(var i = 0; i < 361; ++i) {
