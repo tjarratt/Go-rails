@@ -32,10 +32,10 @@
 
 .circle {
   position: absolute;
-  height: 15px;
-  width: 15px;
-  -moz-border-radius:15px;
-  -webkit-border-radius:15px;
+  height: 14px;
+  width: 14px;
+  -moz-border-radius:14px;
+  -webkit-border-radius:14px;
 
   padding:7px;
   text-align:center;
