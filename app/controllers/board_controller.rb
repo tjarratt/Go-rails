@@ -6,7 +6,5 @@
 # All rights reserved.
 
 class BoardController < ApplicationController
-  def index
-    render 'index.html.haml'
-  end
+  def index; end
 end
