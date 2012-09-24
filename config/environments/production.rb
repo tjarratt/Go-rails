@@ -47,7 +47,16 @@ GO::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-  files = Dir.glob(File.join(Dir.pwd, '../../app/assets/javascripts/*.js')).map {|f| f.split('/').last }
+  js_root = File.join(Dir.pwd, '../../app/assets/javascripts/')
+  files = Dir.glob(File.join(js_root, '*')).map do |js|
+    if File.directory?(js)
+      Dir.glob("#{js}/*.js").map do |file|
+        [js, file].map {|f| f.split('/').last }.join('/')
+      end
+    else
+      js.split('/').last
+    end
+  end.flatten
   config.assets.precompile += files
 
   # Disable delivery errors, bad email addresses will be ignored
