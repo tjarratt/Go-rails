@@ -11,7 +11,6 @@ $(document).ready(function() {
         this.nodes[i] = node;
       }
 
-      // init sidebar
       var pieces = new DraggablePieces();
       pieces.grid = this;
       this.pieces = pieces;
@@ -99,3 +98,21 @@ $(document).ready(function() {
   var grid = new Grid();
   $("#content").html(grid.render().el);
 });
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '331109186984431',
+    channelUrl : '//go-game.heroku.com/channel.html', // Channel File
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow the server to access the session
+    xfbml      : true  // parse XFBML
+  });
+};
+
+(function(d){
+  var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement('script'); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  ref.parentNode.insertBefore(js, ref);
+}(document));
