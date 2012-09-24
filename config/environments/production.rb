@@ -1,6 +1,4 @@
 GO::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb
-
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -15,7 +13,7 @@ GO::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -46,18 +44,7 @@ GO::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
-  js_root = File.join(Dir.pwd, '../../app/assets/javascripts/')
-  files = Dir.glob(File.join(js_root, '*')).map do |js|
-    if File.directory?(js)
-      Dir.glob("#{js}/*.js").map do |file|
-        [js, file].map {|f| f.split('/').last }.join('/')
-      end
-    else
-      js.split('/').last
-    end
-  end.flatten
-  config.assets.precompile += files
+  config.assets.precompile += ['index.js']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
