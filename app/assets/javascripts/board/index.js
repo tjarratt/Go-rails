@@ -54,6 +54,7 @@ $(document).ready(function() {
     dragDropEvent: function(event) {
       if (this.grid.pieces.isDragging) {
         this.set_token(new BlackToken());
+        this.grid.pieces.isDragging = false;
       }
     }
   });
