@@ -55,7 +55,6 @@
   float: left;
   height: 150px;
   width: 50px;
-  background: black;
 }
 
 .no_select {
@@ -65,4 +64,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#header {
+  height: 30px;
+}
+
+body {
+  background:#b06141 url('background.jpg');
+	color:#de987c;
 }
