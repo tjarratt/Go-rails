@@ -75,6 +75,8 @@ Go.Node = Backbone.View.extend({
     "mouseup" : "dragDropEvent"
   },
 
+  // TODO: would rather if this method alerted the grid that
+  // a token was placed here, rather than this reaching into grid
   added_token: function() {
     // look at our neighbors, find any same-color nodes
     // for each node we found, combine into a new chain
@@ -102,6 +104,7 @@ Go.Node = Backbone.View.extend({
     this.grid.find_dead_chains();
   },
 
+  // TODO: separate logic here by creating an event for grid to observe
   dragDropEvent: function(event) {
     if (this.token === null) {
       this.set_token(new Go.BlackToken());
