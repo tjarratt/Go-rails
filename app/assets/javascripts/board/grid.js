@@ -23,6 +23,7 @@ Go.Grid = Backbone.View.extend({
   merge_chains: function(coming, going) {
     var the_chain = coming;
     _(going.nodes).each(function(node) {
+      node.chain = the_chain;
       the_chain.add_node(node);
     });
 
